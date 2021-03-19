@@ -8,23 +8,23 @@ ELECTRON_MASS = 9.10938356e-31
 
 # for proton
 PROTON_CHARGE = -1.602176634e-19
-PROTON_MASS = 1.6726219e-27
+# PROTON_MASS = 1.6726219e-27
+PROTON_MASS = 9999999999
 
 
 # constants
 k = 8.9875517923e9
 EPSILON0 = 8.8541878128e-12
-c = 299792458e-9
+
+
+max_speed = 9e1
+
 
 dt = 1e-3
 
 
-
-
 def distance(pos1, pos2):
     return sqrt((pos1.x-pos2.x)**2+(pos1.y-pos2.y)**2+(pos1.z-pos2.z)**2)
-
-
 
 
 def electric_force(p1, p2):
