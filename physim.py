@@ -13,6 +13,7 @@ class System:
             for p2 in self.particles:
                 if p1 != p2:
                     p1.update(electric_force(p1, p2))
+                    # p1.update(magnetic_force(p1, p2))
 
 
 class Field:
@@ -32,6 +33,7 @@ class Field:
 class UniformField(Field):
     pass
 
+
 class Particle:
     def __init__(self, position, velocity, acceleration, charge, mass, particle_color, radius=0.1):
         self.velocity = velocity
@@ -49,8 +51,8 @@ class Particle:
     def update(self, force):
         self.acceleration = force * (1/self.mass)
         self.velocity += self.acceleration * dt
-        if mag(self.velocity) > max_speed:
-            self.velocity = max_speed * norm(self.velocity)
+        if mag(self.velocity) > max_speed:  # make sure speed isn't over the limit
+            self.velocity = max_speed * norm(self.velocity)  # if it is, consider only the speed's direction
         self.sphere.pos += self.velocity * dt
 
 
@@ -64,18 +66,3 @@ class Proton(Particle):
         super(Proton, self).__init__(position, velocity, acceleration, PROTON_CHARGE, PROTON_MASS, color.red)
 
 
-def main():
-    e1 = Electron(vector(-1, 0, 0))
-    p1 = Proton(vector(0, sin(pi/3), 0))
-    e2 = Electron(vector(1, 0, 0))
-    sys = System([e1, p1, e2])
-    while True:
-        # rate(24)
-        input()
-        for p in sys.particles:
-            print(p.sphere.pos)
-        sys.update()
-
-
-if __name__ == "__main__":
-    main()
