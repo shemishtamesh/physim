@@ -2,7 +2,7 @@ from utils import *
 
 
 class System:
-    def __init__(self, particles=None):
+    def __init__(self, particles=None, frame_rate=0):
         if particles:
             self.particles = particles
         else:

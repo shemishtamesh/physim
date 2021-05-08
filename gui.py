@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'physim_guiRrxfKj.ui'
+## Form generated from reading UI file 'physim_guiaTodqF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -32,25 +32,25 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName(u"groupBox")
         self.gridLayout_3 = QGridLayout(self.groupBox)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.pushButton_2 = QPushButton(self.groupBox)
-        self.pushButton_2.setObjectName(u"pushButton_2")
+        self.clear_particle_list_button = QPushButton(self.groupBox)
+        self.clear_particle_list_button.setObjectName(u"clear_particle_list_button")
 
-        self.gridLayout_3.addWidget(self.pushButton_2, 1, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.clear_particle_list_button, 3, 0, 1, 1)
 
-        self.pushButton = QPushButton(self.groupBox)
-        self.pushButton.setObjectName(u"pushButton")
+        self.remove_particle_button = QPushButton(self.groupBox)
+        self.remove_particle_button.setObjectName(u"remove_particle_button")
 
-        self.gridLayout_3.addWidget(self.pushButton, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.remove_particle_button, 1, 0, 1, 1)
 
-        self.listView = QListView(self.groupBox)
-        self.listView.setObjectName(u"listView")
+        self.add_particle_button = QPushButton(self.groupBox)
+        self.add_particle_button.setObjectName(u"add_particle_button")
 
-        self.gridLayout_3.addWidget(self.listView, 2, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.add_particle_button, 0, 0, 1, 1)
 
-        self.pushButton_3 = QPushButton(self.groupBox)
-        self.pushButton_3.setObjectName(u"pushButton_3")
+        self.particle_list = QListWidget(self.groupBox)
+        self.particle_list.setObjectName(u"particle_list")
 
-        self.gridLayout_3.addWidget(self.pushButton_3, 3, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.particle_list, 2, 0, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
@@ -76,15 +76,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.horizontalSlider_3, 2, 2, 1, 1)
 
-        self.lineEdit_2 = QLineEdit(self.groupBox_2)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.mass_eibp_line_edit = QLineEdit(self.groupBox_2)
+        self.mass_eibp_line_edit.setObjectName(u"mass_eibp_line_edit")
 
-        self.gridLayout_4.addWidget(self.lineEdit_2, 2, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.mass_eibp_line_edit, 2, 1, 1, 1)
 
-        self.lineEdit = QLineEdit(self.groupBox_2)
-        self.lineEdit.setObjectName(u"lineEdit")
+        self.charge_eibp_line_edit = QLineEdit(self.groupBox_2)
+        self.charge_eibp_line_edit.setObjectName(u"charge_eibp_line_edit")
 
-        self.gridLayout_4.addWidget(self.lineEdit, 1, 1, 1, 1)
+        self.gridLayout_4.addWidget(self.charge_eibp_line_edit, 1, 1, 1, 1)
 
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
@@ -131,20 +131,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_5.addWidget(self.label_6, 2, 0, 1, 1)
 
-        self.lineEdit_3 = QLineEdit(self.page)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.x_eibp_position_line_edit = QLineEdit(self.page)
+        self.x_eibp_position_line_edit.setObjectName(u"x_eibp_position_line_edit")
 
-        self.gridLayout_5.addWidget(self.lineEdit_3, 0, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.x_eibp_position_line_edit, 0, 1, 1, 1)
 
-        self.lineEdit_4 = QLineEdit(self.page)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.y_eibp_position_line_edit = QLineEdit(self.page)
+        self.y_eibp_position_line_edit.setObjectName(u"y_eibp_position_line_edit")
 
-        self.gridLayout_5.addWidget(self.lineEdit_4, 1, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.y_eibp_position_line_edit, 1, 1, 1, 1)
 
-        self.lineEdit_5 = QLineEdit(self.page)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
+        self.z_eibp_position_line_edit = QLineEdit(self.page)
+        self.z_eibp_position_line_edit.setObjectName(u"z_eibp_position_line_edit")
 
-        self.gridLayout_5.addWidget(self.lineEdit_5, 2, 1, 1, 1)
+        self.gridLayout_5.addWidget(self.z_eibp_position_line_edit, 2, 1, 1, 1)
 
         self.toolBox.addItem(self.page, u"position")
         self.page_2 = QWidget()
@@ -157,10 +157,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_7, 0, 0, 1, 1)
 
-        self.lineEdit_6 = QLineEdit(self.page_2)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.x_eibp_velocity_line_edit = QLineEdit(self.page_2)
+        self.x_eibp_velocity_line_edit.setObjectName(u"x_eibp_velocity_line_edit")
 
-        self.gridLayout_6.addWidget(self.lineEdit_6, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.x_eibp_velocity_line_edit, 0, 1, 1, 1)
 
         self.horizontalSlider_8 = QSlider(self.page_2)
         self.horizontalSlider_8.setObjectName(u"horizontalSlider_8")
@@ -173,10 +173,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_8, 1, 0, 1, 1)
 
-        self.lineEdit_8 = QLineEdit(self.page_2)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
+        self.y_eibp_velocity_line_edit_2 = QLineEdit(self.page_2)
+        self.y_eibp_velocity_line_edit_2.setObjectName(u"y_eibp_velocity_line_edit_2")
 
-        self.gridLayout_6.addWidget(self.lineEdit_8, 1, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.y_eibp_velocity_line_edit_2, 1, 1, 1, 1)
 
         self.horizontalSlider_7 = QSlider(self.page_2)
         self.horizontalSlider_7.setObjectName(u"horizontalSlider_7")
@@ -189,10 +189,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_9, 2, 0, 1, 1)
 
-        self.lineEdit_7 = QLineEdit(self.page_2)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.z_eibp_velocity_line_edit_3 = QLineEdit(self.page_2)
+        self.z_eibp_velocity_line_edit_3.setObjectName(u"z_eibp_velocity_line_edit_3")
 
-        self.gridLayout_6.addWidget(self.lineEdit_7, 2, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.z_eibp_velocity_line_edit_3, 2, 1, 1, 1)
 
         self.horizontalSlider_9 = QSlider(self.page_2)
         self.horizontalSlider_9.setObjectName(u"horizontalSlider_9")
@@ -210,10 +210,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.label_10, 0, 0, 1, 1)
 
-        self.lineEdit_9 = QLineEdit(self.page_3)
-        self.lineEdit_9.setObjectName(u"lineEdit_9")
+        self.x_eibp_acceleration_line_edit = QLineEdit(self.page_3)
+        self.x_eibp_acceleration_line_edit.setObjectName(u"x_eibp_acceleration_line_edit")
 
-        self.gridLayout_7.addWidget(self.lineEdit_9, 0, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.x_eibp_acceleration_line_edit, 0, 1, 1, 1)
 
         self.horizontalSlider_11 = QSlider(self.page_3)
         self.horizontalSlider_11.setObjectName(u"horizontalSlider_11")
@@ -226,10 +226,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.label_11, 1, 0, 1, 1)
 
-        self.lineEdit_11 = QLineEdit(self.page_3)
-        self.lineEdit_11.setObjectName(u"lineEdit_11")
+        self.y_eibp_acceleration_line_edit = QLineEdit(self.page_3)
+        self.y_eibp_acceleration_line_edit.setObjectName(u"y_eibp_acceleration_line_edit")
 
-        self.gridLayout_7.addWidget(self.lineEdit_11, 1, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.y_eibp_acceleration_line_edit, 1, 1, 1, 1)
 
         self.horizontalSlider_10 = QSlider(self.page_3)
         self.horizontalSlider_10.setObjectName(u"horizontalSlider_10")
@@ -242,10 +242,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.label_12, 2, 0, 1, 1)
 
-        self.lineEdit_10 = QLineEdit(self.page_3)
-        self.lineEdit_10.setObjectName(u"lineEdit_10")
+        self.z_eibp_acceleration_line_edit = QLineEdit(self.page_3)
+        self.z_eibp_acceleration_line_edit.setObjectName(u"z_eibp_acceleration_line_edit")
 
-        self.gridLayout_7.addWidget(self.lineEdit_10, 2, 1, 1, 1)
+        self.gridLayout_7.addWidget(self.z_eibp_acceleration_line_edit, 2, 1, 1, 1)
 
         self.horizontalSlider_12 = QSlider(self.page_3)
         self.horizontalSlider_12.setObjectName(u"horizontalSlider_12")
@@ -668,21 +668,36 @@ class Ui_MainWindow(object):
         self.groupBox_7.setObjectName(u"groupBox_7")
         self.gridLayout_19 = QGridLayout(self.groupBox_7)
         self.gridLayout_19.setObjectName(u"gridLayout_19")
-        self.run_pause = QPushButton(self.groupBox_7)
-        self.run_pause.setObjectName(u"run_pause")
+        self.run_button = QPushButton(self.groupBox_7)
+        self.run_button.setObjectName(u"run_button")
 
-        self.gridLayout_19.addWidget(self.run_pause, 0, 0, 1, 1)
+        self.gridLayout_19.addWidget(self.run_button, 0, 0, 1, 1)
 
         self.label = QLabel(self.groupBox_7)
         self.label.setObjectName(u"label")
 
-        self.gridLayout_19.addWidget(self.label, 0, 1, 1, 1)
+        self.gridLayout_19.addWidget(self.label, 0, 2, 1, 1)
+
+        self.pause_button = QPushButton(self.groupBox_7)
+        self.pause_button.setObjectName(u"pause_button")
+
+        self.gridLayout_19.addWidget(self.pause_button, 0, 1, 1, 1)
+
+        self.frame_rate_line_edit = QLineEdit(self.groupBox_7)
+        self.frame_rate_line_edit.setObjectName(u"frame_rate_line_edit")
+
+        self.gridLayout_19.addWidget(self.frame_rate_line_edit, 0, 3, 1, 1)
 
         self.horizontalSlider = QSlider(self.groupBox_7)
         self.horizontalSlider.setObjectName(u"horizontalSlider")
         self.horizontalSlider.setOrientation(Qt.Horizontal)
 
-        self.gridLayout_19.addWidget(self.horizontalSlider, 0, 2, 1, 1)
+        self.gridLayout_19.addWidget(self.horizontalSlider, 0, 4, 1, 1)
+
+        self.set_frame_rate_button = QPushButton(self.groupBox_7)
+        self.set_frame_rate_button.setObjectName(u"set_frame_rate_button")
+
+        self.gridLayout_19.addWidget(self.set_frame_rate_button, 0, 5, 1, 1)
 
 
         self.gridLayout.addWidget(self.groupBox_7, 1, 0, 1, 1)
@@ -698,7 +713,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.tabWidget.setCurrentIndex(1)
+        self.tabWidget.setCurrentIndex(0)
         self.toolBox.setCurrentIndex(0)
         self.toolBox_2.setCurrentIndex(0)
         self.toolBox_3.setCurrentIndex(0)
@@ -710,9 +725,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"particle list", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"remove particle", None))
-        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"add particle", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
+        self.clear_particle_list_button.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
+        self.remove_particle_button.setText(QCoreApplication.translate("MainWindow", u"remove particle", None))
+        self.add_particle_button.setText(QCoreApplication.translate("MainWindow", u"add particle", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"particle controls", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"mass:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"charge:", None))
@@ -764,7 +779,9 @@ class Ui_MainWindow(object):
         self.toolBox_3.setItemText(self.toolBox_3.indexOf(self.page_9), QCoreApplication.translate("MainWindow", u"type", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"electro-magnetic effect of fields on a particle", None))
         self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"simulation controls", None))
-        self.run_pause.setText(QCoreApplication.translate("MainWindow", u"run", None))
+        self.run_button.setText(QCoreApplication.translate("MainWindow", u"run", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"frame rate:", None))
+        self.pause_button.setText(QCoreApplication.translate("MainWindow", u"pause", None))
+        self.set_frame_rate_button.setText(QCoreApplication.translate("MainWindow", u"set frame rate", None))
     # retranslateUi
 
