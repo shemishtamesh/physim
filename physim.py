@@ -14,7 +14,14 @@ class System:
                 if p1 != p2:
                     p1.update(electric_force(p1, p2))
                     # p1.update(magnetic_force(p1, p2))
+                elif p1 == p2:
+                    p1.update(vector(0, 0, 0))
 
+    def remove_particle(self, index):
+        print(index)
+        selected_particle = self.particles[index]
+        selected_particle.sphere.visible = False
+        self.particles.remove(selected_particle)
 
 class Field:
     def __init__(self, value, position, size, direction, field_color):
@@ -51,6 +58,7 @@ class Particle:
     def update(self, force):
         self.acceleration = force * (1/self.mass)
         self.velocity += self.acceleration * dt
+        print(self.velocity)
         if mag(self.velocity) > max_speed:  # make sure speed isn't over the limit
             self.velocity = max_speed * norm(self.velocity)  # if it is, consider only the speed's direction
         self.sphere.pos += self.velocity * dt

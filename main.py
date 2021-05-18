@@ -24,8 +24,13 @@ class MainWindow(qtw.QMainWindow):
         self.ui.pause_button.clicked.connect(self.pause)
         self.ui.set_frame_rate_button.clicked.connect(self.set_frame_rate)
 
-        # electrical interaction between particles - gui:
+        # electrical interaction between particles:
         self.ui.add_particle_button.clicked.connect(self.add_particle)
+        self.ui.remove_particle_button.clicked.connect(self.remove_particle)
+        self.ui.clear_particle_list_button.clicked.connect(self.clear_list)
+        self.ui.red_slider.setValue(99)
+        self.ui.green_slider.setValue(99)
+        self.ui.blue_slider.setValue(99)
 
         # global variables:
         self.paused = True
@@ -42,6 +47,7 @@ class MainWindow(qtw.QMainWindow):
     def main_sim_loop(self):
         rate(self.frame_rate)
         if not self.paused:
+            print(self.system.particles)
             self.system.update()
         if self.is_still_running:
             qtc.QTimer.singleShot(25, self.main_sim_loop)
@@ -90,11 +96,48 @@ class MainWindow(qtw.QMainWindow):
         velocity = vector(x_vel, y_vel, z_vel)
         acceleration = vector(x_acc, y_acc, z_acc)
 
-        new_particle = Particle(position, velocity, acceleration, charge, mass, color.white)
+        print("position:", position)
+        print("velocity:", velocity)
+        print("acceleration:", acceleration)
+
+        particle_color = vector(self.ui.red_slider.value()/99,
+                                self.ui.green_slider.value()/99,
+                                self.ui.blue_slider.value()/99)
+
+        print(particle_color)
+
+        new_particle = Particle(position, velocity, acceleration, charge, mass, particle_color)
         self.system.particles.append(new_particle)
 
-        index = self.ui.particle_list.count()
-        self.ui.particle_list.addItem(f"particle {index}")
+        particle_name = self.ui.name_input_line.text()
+        if particle_name:
+            self.ui.particle_list.addItem(self.ui.name_input_line.text())
+        else:
+            particle_index = self.ui.particle_list.count()
+            self.ui.particle_list.addItem(f"particle {particle_index}")
+
+    def remove_particle(self):
+        try:
+            selected_item_from_list = self.ui.particle_list.selectedItems()[0]
+        except IndexError:
+            qtw.QMessageBox.critical(None, 'Fail', "you have to select a particle if you want to remove one.")
+            return
+
+        are_you_sure_message = qtw.QMessageBox()
+        are_you_sure_message.setText("Are you sure?")
+        are_you_sure_message.setStandardButtons(qtw.QMessageBox.Yes | qtw.QMessageBox.Cancel)
+        are_you_sure_message = are_you_sure_message.exec()
+
+        if are_you_sure_message == qtw.QMessageBox.Yes:
+            index_on_list = self.ui.particle_list.currentRow()
+            self.system.remove_particle(index_on_list)
+            self.ui.particle_list.takeItem(index_on_list)
+
+    def clear_list(self):
+        while self.ui.particle_list.count() > 0:
+            self.system.remove_particle(0)
+            self.ui.particle_list.takeItem(0)
+
 
     def closeEvent(self, event):
         close = qtw.QMessageBox()

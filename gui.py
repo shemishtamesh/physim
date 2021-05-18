@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'physim_guiPhvBnN.ui'
+## Form generated from reading UI file 'physim_guioVxmFR.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -28,37 +28,15 @@ class Ui_MainWindow(object):
         self.tab.setObjectName(u"tab")
         self.gridLayout_2 = QGridLayout(self.tab)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.groupBox = QGroupBox(self.tab)
-        self.groupBox.setObjectName(u"groupBox")
-        self.gridLayout_3 = QGridLayout(self.groupBox)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.clear_particle_list_button = QPushButton(self.groupBox)
-        self.clear_particle_list_button.setObjectName(u"clear_particle_list_button")
-
-        self.gridLayout_3.addWidget(self.clear_particle_list_button, 3, 0, 1, 1)
-
-        self.remove_particle_button = QPushButton(self.groupBox)
-        self.remove_particle_button.setObjectName(u"remove_particle_button")
-
-        self.gridLayout_3.addWidget(self.remove_particle_button, 1, 0, 1, 1)
-
-        self.particle_list = QListWidget(self.groupBox)
-        self.particle_list.setObjectName(u"particle_list")
-
-        self.gridLayout_3.addWidget(self.particle_list, 2, 0, 1, 1)
-
-        self.add_particle_button = QPushButton(self.groupBox)
-        self.add_particle_button.setObjectName(u"add_particle_button")
-
-        self.gridLayout_3.addWidget(self.add_particle_button, 0, 0, 1, 1)
-
-
-        self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
-
         self.groupBox_2 = QGroupBox(self.tab)
         self.groupBox_2.setObjectName(u"groupBox_2")
         self.gridLayout_4 = QGridLayout(self.groupBox_2)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.mass_eibp_line_edit = QLineEdit(self.groupBox_2)
+        self.mass_eibp_line_edit.setObjectName(u"mass_eibp_line_edit")
+
+        self.gridLayout_4.addWidget(self.mass_eibp_line_edit, 2, 1, 1, 1)
+
         self.label_3 = QLabel(self.groupBox_2)
         self.label_3.setObjectName(u"label_3")
 
@@ -70,21 +48,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.horizontalSlider_2, 1, 2, 1, 1)
 
+        self.charge_eibp_line_edit = QLineEdit(self.groupBox_2)
+        self.charge_eibp_line_edit.setObjectName(u"charge_eibp_line_edit")
+
+        self.gridLayout_4.addWidget(self.charge_eibp_line_edit, 1, 1, 1, 1)
+
         self.horizontalSlider_3 = QSlider(self.groupBox_2)
         self.horizontalSlider_3.setObjectName(u"horizontalSlider_3")
         self.horizontalSlider_3.setOrientation(Qt.Horizontal)
 
         self.gridLayout_4.addWidget(self.horizontalSlider_3, 2, 2, 1, 1)
-
-        self.mass_eibp_line_edit = QLineEdit(self.groupBox_2)
-        self.mass_eibp_line_edit.setObjectName(u"mass_eibp_line_edit")
-
-        self.gridLayout_4.addWidget(self.mass_eibp_line_edit, 2, 1, 1, 1)
-
-        self.charge_eibp_line_edit = QLineEdit(self.groupBox_2)
-        self.charge_eibp_line_edit.setObjectName(u"charge_eibp_line_edit")
-
-        self.gridLayout_4.addWidget(self.charge_eibp_line_edit, 1, 1, 1, 1)
 
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
@@ -93,9 +66,47 @@ class Ui_MainWindow(object):
 
         self.toolBox = QToolBox(self.groupBox_2)
         self.toolBox.setObjectName(u"toolBox")
+        self.aesthetics = QWidget()
+        self.aesthetics.setObjectName(u"aesthetics")
+        self.gridLayout_20 = QGridLayout(self.aesthetics)
+        self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.label_32 = QLabel(self.aesthetics)
+        self.label_32.setObjectName(u"label_32")
+
+        self.gridLayout_20.addWidget(self.label_32, 9, 0, 1, 1)
+
+        self.label_33 = QLabel(self.aesthetics)
+        self.label_33.setObjectName(u"label_33")
+
+        self.gridLayout_20.addWidget(self.label_33, 4, 0, 1, 1)
+
+        self.label_34 = QLabel(self.aesthetics)
+        self.label_34.setObjectName(u"label_34")
+
+        self.gridLayout_20.addWidget(self.label_34, 8, 0, 1, 1)
+
+        self.blue_slider = QSlider(self.aesthetics)
+        self.blue_slider.setObjectName(u"blue_slider")
+        self.blue_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_20.addWidget(self.blue_slider, 9, 1, 1, 1)
+
+        self.green_slider = QSlider(self.aesthetics)
+        self.green_slider.setObjectName(u"green_slider")
+        self.green_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_20.addWidget(self.green_slider, 8, 1, 1, 1)
+
+        self.red_slider = QSlider(self.aesthetics)
+        self.red_slider.setObjectName(u"red_slider")
+        self.red_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_20.addWidget(self.red_slider, 4, 1, 1, 1)
+
+        self.toolBox.addItem(self.aesthetics, u"aesthetics")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 347, 225))
+        self.page.setGeometry(QRect(0, 0, 347, 194))
         self.gridLayout_5 = QGridLayout(self.page)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.label_4 = QLabel(self.page)
@@ -149,7 +160,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"position")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 347, 225))
+        self.page_2.setGeometry(QRect(0, 0, 347, 194))
         self.gridLayout_6 = QGridLayout(self.page_2)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.label_7 = QLabel(self.page_2)
@@ -203,7 +214,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page_2, u"velocity")
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
-        self.page_3.setGeometry(QRect(0, 0, 347, 225))
+        self.page_3.setGeometry(QRect(0, 0, 347, 194))
         self.gridLayout_7 = QGridLayout(self.page_3)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.label_10 = QLabel(self.page_3)
@@ -260,6 +271,43 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout_2.addWidget(self.groupBox_2, 0, 1, 1, 1)
+
+        self.groupBox = QGroupBox(self.tab)
+        self.groupBox.setObjectName(u"groupBox")
+        self.gridLayout_3 = QGridLayout(self.groupBox)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.remove_particle_button = QPushButton(self.groupBox)
+        self.remove_particle_button.setObjectName(u"remove_particle_button")
+
+        self.gridLayout_3.addWidget(self.remove_particle_button, 2, 0, 1, 3)
+
+        self.particle_list = QListWidget(self.groupBox)
+        self.particle_list.setObjectName(u"particle_list")
+
+        self.gridLayout_3.addWidget(self.particle_list, 3, 0, 1, 3)
+
+        self.clear_particle_list_button = QPushButton(self.groupBox)
+        self.clear_particle_list_button.setObjectName(u"clear_particle_list_button")
+
+        self.gridLayout_3.addWidget(self.clear_particle_list_button, 4, 0, 1, 3)
+
+        self.name_input_line = QLineEdit(self.groupBox)
+        self.name_input_line.setObjectName(u"name_input_line")
+
+        self.gridLayout_3.addWidget(self.name_input_line, 1, 2, 1, 1)
+
+        self.add_particle_button = QPushButton(self.groupBox)
+        self.add_particle_button.setObjectName(u"add_particle_button")
+
+        self.gridLayout_3.addWidget(self.add_particle_button, 1, 0, 1, 1)
+
+        self.label_31 = QLabel(self.groupBox)
+        self.label_31.setObjectName(u"label_31")
+
+        self.gridLayout_3.addWidget(self.label_31, 1, 1, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
 
         self.tabWidget.addTab(self.tab, "")
         self.tab_2 = QWidget()
@@ -724,13 +772,13 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"particle list", None))
-        self.clear_particle_list_button.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
-        self.remove_particle_button.setText(QCoreApplication.translate("MainWindow", u"remove particle", None))
-        self.add_particle_button.setText(QCoreApplication.translate("MainWindow", u"add particle", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"particle controls", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"mass:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"charge:", None))
+        self.label_32.setText(QCoreApplication.translate("MainWindow", u"blue:", None))
+        self.label_33.setText(QCoreApplication.translate("MainWindow", u"red:", None))
+        self.label_34.setText(QCoreApplication.translate("MainWindow", u"green:", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.aesthetics), QCoreApplication.translate("MainWindow", u"aesthetics", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"X:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Y:", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
@@ -743,6 +791,11 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Y:", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_3), QCoreApplication.translate("MainWindow", u"acceleration", None))
+        self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"particle list", None))
+        self.remove_particle_button.setText(QCoreApplication.translate("MainWindow", u"remove particle", None))
+        self.clear_particle_list_button.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
+        self.add_particle_button.setText(QCoreApplication.translate("MainWindow", u"add particle", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"name:", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"electrical interaction between particles", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"particle", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"X:", None))
