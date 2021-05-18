@@ -24,28 +24,29 @@ class MainWindow(qtw.QMainWindow):
         self.ui.pause_button.clicked.connect(self.pause)
         self.ui.set_frame_rate_button.clicked.connect(self.set_frame_rate)
 
-        # electrical interaction between particles
+        # electrical interaction between particles - gui:
         self.ui.add_particle_button.clicked.connect(self.add_particle)
 
         # global variables:
         self.paused = True
         self.frame_rate = 24
+        self.is_still_running = True
 
         # start simulation:
-        self.e1 = Electron(vector(-1, 0, 0), vector(0, 0, 0))
-        self.p1 = Proton(vector(0, sin(pi / 3), 0))
-        self.e2 = Electron(vector(1, 0, 0), vector(3, 0, 0))
-        self.system = System([self.e1, self.p1, self.e2])
+        temp_shape = sphere(opacity=0)
+        del temp_shape
+
+        self.system = System([])
         self.main_sim_loop()
 
     def main_sim_loop(self):
         rate(self.frame_rate)
         if not self.paused:
-            for p in self.system.particles:
-                print(p.sphere.pos)
             self.system.update()
-
-        qtc.QTimer.singleShot(25, self.main_sim_loop)
+        if self.is_still_running:
+            qtc.QTimer.singleShot(25, self.main_sim_loop)
+        else:
+            pass
 
     # for simulation controls:
     def run(self):
@@ -66,9 +67,46 @@ class MainWindow(qtw.QMainWindow):
 
     # for electrical interaction between particles:
     def add_particle(self):
+        try:
+            x_pos = default_value(self.ui.x_eibp_position_line_edit.text())
+            y_pos = default_value(self.ui.y_eibp_position_line_edit.text())
+            z_pos = default_value(self.ui.z_eibp_position_line_edit.text())
+
+            x_vel = default_value(self.ui.x_eibp_velocity_line_edit.text())
+            y_vel = default_value(self.ui.y_eibp_velocity_line_edit.text())
+            z_vel = default_value(self.ui.z_eibp_velocity_line_edit.text())
+
+            x_acc = default_value(self.ui.x_eibp_acceleration_line_edit.text())
+            y_acc = default_value(self.ui.y_eibp_acceleration_line_edit.text())
+            z_acc = default_value(self.ui.z_eibp_acceleration_line_edit.text())
+
+            charge = default_value(self.ui.charge_eibp_line_edit.text())
+            mass = default_value_mass(self.ui.mass_eibp_line_edit.text())
+        except TypeError:
+            qtw.QMessageBox.critical(None, 'Fail', "arguments for creating particles must be numbers.")
+            return
+
+        position = vector(x_pos, y_pos, z_pos)
+        velocity = vector(x_vel, y_vel, z_vel)
+        acceleration = vector(x_acc, y_acc, z_acc)
+
+        new_particle = Particle(position, velocity, acceleration, charge, mass, color.white)
+        self.system.particles.append(new_particle)
+
         index = self.ui.particle_list.count()
         self.ui.particle_list.addItem(f"particle {index}")
 
+    def closeEvent(self, event):
+        close = qtw.QMessageBox()
+        close.setText("You sure?")
+        close.setStandardButtons(qtw.QMessageBox.Yes | qtw.QMessageBox.Cancel)
+        close = close.exec()
+
+        if close == qtw.QMessageBox.Yes:
+            event.accept()
+            self.is_still_running = False
+        else:
+            event.ignore()
 
 if __name__ == "__main__":
     # for handling exceptions:

@@ -46,6 +46,18 @@ def magnetic_force(p1, p2):
     v2 = p2.velocity
     pos_diff = p1.sphere.pos - p2.sphere.pos
 
-    ret = (mu0/(4*pi)) * (q1 * q2 / (mag(pos_diff)**2)) * cross(v1, cross(v2, norm(pos_diff)))
-    print("ret: ", ret)
-    return ret
+    return (mu0/(4*pi)) * (q1 * q2 / (mag(pos_diff)**2)) * cross(v1, cross(v2, norm(pos_diff)))
+
+
+def default_value(string):
+    if string == '':
+        return 0
+    else:
+        return float(string)  # we catch the potentioal error when calling this function
+
+
+def default_value_mass(string):
+    if string == '':
+        return 1
+    else:
+        return float(string)  # we catch the potentioal error when calling this function

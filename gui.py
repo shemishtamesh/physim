@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'physim_guiaTodqF.ui'
+## Form generated from reading UI file 'physim_guiPhvBnN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
+        MainWindow.resize(800, 619)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -42,15 +42,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addWidget(self.remove_particle_button, 1, 0, 1, 1)
 
-        self.add_particle_button = QPushButton(self.groupBox)
-        self.add_particle_button.setObjectName(u"add_particle_button")
-
-        self.gridLayout_3.addWidget(self.add_particle_button, 0, 0, 1, 1)
-
         self.particle_list = QListWidget(self.groupBox)
         self.particle_list.setObjectName(u"particle_list")
 
         self.gridLayout_3.addWidget(self.particle_list, 2, 0, 1, 1)
+
+        self.add_particle_button = QPushButton(self.groupBox)
+        self.add_particle_button.setObjectName(u"add_particle_button")
+
+        self.gridLayout_3.addWidget(self.add_particle_button, 0, 0, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
@@ -95,7 +95,7 @@ class Ui_MainWindow(object):
         self.toolBox.setObjectName(u"toolBox")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 347, 206))
+        self.page.setGeometry(QRect(0, 0, 347, 225))
         self.gridLayout_5 = QGridLayout(self.page)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.label_4 = QLabel(self.page)
@@ -149,7 +149,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"position")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 347, 206))
+        self.page_2.setGeometry(QRect(0, 0, 347, 225))
         self.gridLayout_6 = QGridLayout(self.page_2)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.label_7 = QLabel(self.page_2)
@@ -173,10 +173,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_8, 1, 0, 1, 1)
 
-        self.y_eibp_velocity_line_edit_2 = QLineEdit(self.page_2)
-        self.y_eibp_velocity_line_edit_2.setObjectName(u"y_eibp_velocity_line_edit_2")
+        self.y_eibp_velocity_line_edit = QLineEdit(self.page_2)
+        self.y_eibp_velocity_line_edit.setObjectName(u"y_eibp_velocity_line_edit")
 
-        self.gridLayout_6.addWidget(self.y_eibp_velocity_line_edit_2, 1, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.y_eibp_velocity_line_edit, 1, 1, 1, 1)
 
         self.horizontalSlider_7 = QSlider(self.page_2)
         self.horizontalSlider_7.setObjectName(u"horizontalSlider_7")
@@ -189,10 +189,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.label_9, 2, 0, 1, 1)
 
-        self.z_eibp_velocity_line_edit_3 = QLineEdit(self.page_2)
-        self.z_eibp_velocity_line_edit_3.setObjectName(u"z_eibp_velocity_line_edit_3")
+        self.z_eibp_velocity_line_edit = QLineEdit(self.page_2)
+        self.z_eibp_velocity_line_edit.setObjectName(u"z_eibp_velocity_line_edit")
 
-        self.gridLayout_6.addWidget(self.z_eibp_velocity_line_edit_3, 2, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.z_eibp_velocity_line_edit, 2, 1, 1, 1)
 
         self.horizontalSlider_9 = QSlider(self.page_2)
         self.horizontalSlider_9.setObjectName(u"horizontalSlider_9")
@@ -203,6 +203,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page_2, u"velocity")
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
+        self.page_3.setGeometry(QRect(0, 0, 347, 225))
         self.gridLayout_7 = QGridLayout(self.page_3)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.label_10 = QLabel(self.page_3)
@@ -273,7 +274,7 @@ class Ui_MainWindow(object):
         self.toolBox_2.setObjectName(u"toolBox_2")
         self.page_4 = QWidget()
         self.page_4.setObjectName(u"page_4")
-        self.page_4.setGeometry(QRect(0, 0, 196, 268))
+        self.page_4.setGeometry(QRect(0, 0, 196, 287))
         self.gridLayout_9 = QGridLayout(self.page_4)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.label_13 = QLabel(self.page_4)
@@ -327,7 +328,7 @@ class Ui_MainWindow(object):
         self.toolBox_2.addItem(self.page_4, u"position")
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
-        self.page_5.setGeometry(QRect(0, 0, 347, 308))
+        self.page_5.setGeometry(QRect(0, 0, 129, 108))
         self.gridLayout_11 = QGridLayout(self.page_5)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.label_16 = QLabel(self.page_5)
@@ -381,7 +382,7 @@ class Ui_MainWindow(object):
         self.toolBox_2.addItem(self.page_5, u"velocity")
         self.page_8 = QWidget()
         self.page_8.setObjectName(u"page_8")
-        self.page_8.setGeometry(QRect(0, 0, 347, 268))
+        self.page_8.setGeometry(QRect(0, 0, 129, 108))
         self.gridLayout_12 = QGridLayout(self.page_8)
         self.gridLayout_12.setObjectName(u"gridLayout_12")
         self.label_19 = QLabel(self.page_8)
@@ -583,7 +584,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.page_6, u"position")
         self.page_7 = QWidget()
         self.page_7.setObjectName(u"page_7")
-        self.page_7.setGeometry(QRect(0, 0, 327, 108))
+        self.page_7.setGeometry(QRect(0, 0, 129, 108))
         self.gridLayout_17 = QGridLayout(self.page_7)
         self.gridLayout_17.setObjectName(u"gridLayout_17")
         self.label_29 = QLabel(self.page_7)
@@ -637,6 +638,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.page_7, u"magnitute and direction")
         self.page_9 = QWidget()
         self.page_9.setObjectName(u"page_9")
+        self.page_9.setGeometry(QRect(0, 0, 129, 69))
         self.gridLayout_18 = QGridLayout(self.page_9)
         self.gridLayout_18.setObjectName(u"gridLayout_18")
         self.radioButton_2 = QRadioButton(self.page_9)
@@ -652,8 +654,6 @@ class Ui_MainWindow(object):
         self.gridLayout_18.addWidget(self.radioButton, 2, 0, 1, 1)
 
         self.toolBox_3.addItem(self.page_9, u"type")
-        self.radioButton_2.raise_()
-        self.radioButton.raise_()
 
         self.gridLayout_10.addWidget(self.toolBox_3, 5, 0, 1, 1)
 
