@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'physim_guioVxmFR.ui'
+## Form generated from reading UI file 'physim_guieASggl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -70,6 +70,12 @@ class Ui_MainWindow(object):
         self.aesthetics.setObjectName(u"aesthetics")
         self.gridLayout_20 = QGridLayout(self.aesthetics)
         self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.red_slider = QSlider(self.aesthetics)
+        self.red_slider.setObjectName(u"red_slider")
+        self.red_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_20.addWidget(self.red_slider, 4, 2, 1, 1)
+
         self.label_32 = QLabel(self.aesthetics)
         self.label_32.setObjectName(u"label_32")
 
@@ -89,19 +95,18 @@ class Ui_MainWindow(object):
         self.blue_slider.setObjectName(u"blue_slider")
         self.blue_slider.setOrientation(Qt.Horizontal)
 
-        self.gridLayout_20.addWidget(self.blue_slider, 9, 1, 1, 1)
+        self.gridLayout_20.addWidget(self.blue_slider, 9, 2, 1, 1)
 
         self.green_slider = QSlider(self.aesthetics)
         self.green_slider.setObjectName(u"green_slider")
         self.green_slider.setOrientation(Qt.Horizontal)
 
-        self.gridLayout_20.addWidget(self.green_slider, 8, 1, 1, 1)
+        self.gridLayout_20.addWidget(self.green_slider, 8, 2, 1, 1)
 
-        self.red_slider = QSlider(self.aesthetics)
-        self.red_slider.setObjectName(u"red_slider")
-        self.red_slider.setOrientation(Qt.Horizontal)
+        self.trail_check_box = QCheckBox(self.aesthetics)
+        self.trail_check_box.setObjectName(u"trail_check_box")
 
-        self.gridLayout_20.addWidget(self.red_slider, 4, 1, 1, 1)
+        self.gridLayout_20.addWidget(self.trail_check_box, 10, 0, 1, 1)
 
         self.toolBox.addItem(self.aesthetics, u"aesthetics")
         self.page = QWidget()
@@ -778,6 +783,7 @@ class Ui_MainWindow(object):
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"blue:", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"red:", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"green:", None))
+        self.trail_check_box.setText(QCoreApplication.translate("MainWindow", u"trail", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.aesthetics), QCoreApplication.translate("MainWindow", u"aesthetics", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"X:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Y:", None))

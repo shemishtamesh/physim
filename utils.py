@@ -33,12 +33,12 @@ def electric_force(p1, p2):
     """force on p1 from p2"""
     q1 = p1.charge
     q2 = p2.charge
-    pos_diff = p1.sphere.pos - p2.sphere.pos
+    pos_diff = p1.pos - p2.pos
 
     if ((4 * pi * EPSILON0) * (mag(pos_diff) ** 3)) != 0:
         return (q1 * q2 * pos_diff) / ((4*pi*EPSILON0) * (mag(pos_diff) ** 3))
     else:
-        return 0
+        return vector(0, 0, 0)
 
 def magnetic_force(p1, p2):
     """force on p1 from p2"""

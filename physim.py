@@ -18,9 +18,8 @@ class System:
                     p1.update(vector(0, 0, 0))
 
     def remove_particle(self, index):
-        print(index)
         selected_particle = self.particles[index]
-        selected_particle.sphere.visible = False
+        selected_particle.visible = False
         self.particles.remove(selected_particle)
 
 class Field:
@@ -37,40 +36,12 @@ class Field:
         pass  # TODO: implement draw with small arrows
 
 
-class UniformField(Field):
-    pass
+def update(self, force):
+    self.acceleration = force * (1/self.mass)
+    self.velocity += self.acceleration * dt
+    if mag(self.velocity) > max_speed:  # make sure speed isn't over the limit
+        self.velocity = max_speed * norm(self.velocity)  # if it is, consider only the speed's direction
+    self.pos += self.velocity * dt
 
 
-class Particle:
-    def __init__(self, position, velocity, acceleration, charge, mass, particle_color, radius=0.1):
-        self.velocity = velocity
-        self.charge = charge
-        self.acceleration = acceleration
-        self.mass = mass
-        self.particle_color = particle_color
-        self.radius = radius
-
-        self.sphere = self.draw(position)
-
-    def draw(self, position):
-        return sphere(pos=position, color=self.particle_color, radius=self.radius)
-
-    def update(self, force):
-        self.acceleration = force * (1/self.mass)
-        self.velocity += self.acceleration * dt
-        print(self.velocity)
-        if mag(self.velocity) > max_speed:  # make sure speed isn't over the limit
-            self.velocity = max_speed * norm(self.velocity)  # if it is, consider only the speed's direction
-        self.sphere.pos += self.velocity * dt
-
-
-class Electron(Particle):
-    def __init__(self, position, velocity=vector(0, 0, 0), acceleration=vector(0, 0, 0)):
-        super(Electron, self).__init__(position, velocity, acceleration, ELECTRON_CHARGE, ELECTRON_MASS, color.blue)
-
-
-class Proton(Particle):
-    def __init__(self, position, velocity=vector(0, 0, 0), acceleration=vector(0, 0, 0)):
-        super(Proton, self).__init__(position, velocity, acceleration, PROTON_CHARGE, PROTON_MASS, color.red)
-
-
+sphere.update = update

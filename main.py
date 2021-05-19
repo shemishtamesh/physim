@@ -47,7 +47,6 @@ class MainWindow(qtw.QMainWindow):
     def main_sim_loop(self):
         rate(self.frame_rate)
         if not self.paused:
-            print(self.system.particles)
             self.system.update()
         if self.is_still_running:
             qtc.QTimer.singleShot(25, self.main_sim_loop)
@@ -96,17 +95,21 @@ class MainWindow(qtw.QMainWindow):
         velocity = vector(x_vel, y_vel, z_vel)
         acceleration = vector(x_acc, y_acc, z_acc)
 
-        print("position:", position)
-        print("velocity:", velocity)
-        print("acceleration:", acceleration)
-
         particle_color = vector(self.ui.red_slider.value()/99,
                                 self.ui.green_slider.value()/99,
                                 self.ui.blue_slider.value()/99)
 
-        print(particle_color)
+        does_have_trail = self.ui.trail_check_box.isChecked()
 
-        new_particle = Particle(position, velocity, acceleration, charge, mass, particle_color)
+        new_particle = sphere(pos=position,
+                              color=particle_color,
+                              radius=0.1,
+                              mass=mass,
+                              acceleration=acceleration,
+                              charge=charge,
+                              velocity=velocity,
+                              make_trail=does_have_trail)
+
         self.system.particles.append(new_particle)
 
         particle_name = self.ui.name_input_line.text()
@@ -138,7 +141,7 @@ class MainWindow(qtw.QMainWindow):
             self.system.remove_particle(0)
             self.ui.particle_list.takeItem(0)
 
-
+    # event handling:
     def closeEvent(self, event):
         close = qtw.QMessageBox()
         close.setText("You sure?")
