@@ -12,10 +12,10 @@ class EibpSystem:
         for p1 in self.particles:
             for p2 in self.particles:
                 if p1 != p2:
-                    p1.update_particle(electric_force(p1, p2), )
+                    p1.update(electric_force(p1, p2), )
                     # p1.update_particle(magnetic_force(p1, p2))
                 elif p1 == p2:
-                    p1.update_particle(vector(0, 0, 0), )
+                    p1.update(vector(0, 0, 0), )
 
     def remove_particle(self, index):
         selected_particle = self.particles[index]
@@ -61,7 +61,7 @@ class Field:
         pass  # TODO: implement draw with small arrows
 
 
-def update_particle(self, force):
+def update(self, force):
     print(force)
     self.acceleration = force * (1/self.mass)
     self.velocity += self.acceleration * dt
@@ -70,4 +70,4 @@ def update_particle(self, force):
     self.pos += self.velocity * dt
 
 
-sphere.update_particle = update_particle
+sphere.update_particle = update
