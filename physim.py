@@ -1,8 +1,8 @@
 from utils import *
 
 
-class System:
-    def __init__(self, particles=None, frame_rate=0):
+class EibpSystem:
+    def __init__(self, particles=None):
         if particles:
             self.particles = particles
         else:
@@ -12,15 +12,40 @@ class System:
         for p1 in self.particles:
             for p2 in self.particles:
                 if p1 != p2:
-                    p1.update(electric_force(p1, p2))
-                    # p1.update(magnetic_force(p1, p2))
+                    p1.update_particle(electric_force(p1, p2), )
+                    # p1.update_particle(magnetic_force(p1, p2))
                 elif p1 == p2:
-                    p1.update(vector(0, 0, 0))
+                    p1.update_particle(vector(0, 0, 0), )
 
     def remove_particle(self, index):
         selected_particle = self.particles[index]
         selected_particle.visible = False
+        selected_particle.clear_trail()
         self.particles.remove(selected_particle)
+
+
+class EmeofoapSystem:
+    def __init__(self, fields=None, particle=None):
+        if fields:
+            self.fields = fields
+        else:
+            self.fields = []
+
+        if particle:
+            self.particle = particle
+        else:
+            self.particle = None  # TODO: make default particle instead of None
+
+    def update(self):
+        for field in self.fields:
+            if field.is_in(self.particle.pos):  # TODO: create is_in
+                force = field.force_on_particle(self.particle)  # TODO: create force_on_particle
+                self.particle.update(force)
+
+    def remove_force(self, index):
+        selected_force = self.forces[index]
+        selected_force.visible = False
+        self.force.remove(selected_force)
 
 class Field:
     def __init__(self, value, position, size, direction, field_color):
@@ -36,7 +61,8 @@ class Field:
         pass  # TODO: implement draw with small arrows
 
 
-def update(self, force):
+def update_particle(self, force):
+    print(force)
     self.acceleration = force * (1/self.mass)
     self.velocity += self.acceleration * dt
     if mag(self.velocity) > max_speed:  # make sure speed isn't over the limit
@@ -44,4 +70,4 @@ def update(self, force):
     self.pos += self.velocity * dt
 
 
-sphere.update = update
+sphere.update_particle = update_particle

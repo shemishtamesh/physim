@@ -41,7 +41,7 @@ class MainWindow(qtw.QMainWindow):
         temp_shape = sphere(opacity=0)
         del temp_shape
 
-        self.system = System([])
+        self.system = EibpSystem([])
         self.main_sim_loop()
 
     def main_sim_loop(self):
