@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'physim_guieASggl.ui'
+## Form generated from reading UI file 'physim_guiUCqbzL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 619)
+        MainWindow.resize(940, 690)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
@@ -70,11 +70,10 @@ class Ui_MainWindow(object):
         self.aesthetics.setObjectName(u"aesthetics")
         self.gridLayout_20 = QGridLayout(self.aesthetics)
         self.gridLayout_20.setObjectName(u"gridLayout_20")
-        self.red_slider = QSlider(self.aesthetics)
-        self.red_slider.setObjectName(u"red_slider")
-        self.red_slider.setOrientation(Qt.Horizontal)
+        self.trail_check_box = QCheckBox(self.aesthetics)
+        self.trail_check_box.setObjectName(u"trail_check_box")
 
-        self.gridLayout_20.addWidget(self.red_slider, 4, 2, 1, 1)
+        self.gridLayout_20.addWidget(self.trail_check_box, 10, 0, 1, 1)
 
         self.label_32 = QLabel(self.aesthetics)
         self.label_32.setObjectName(u"label_32")
@@ -103,15 +102,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_20.addWidget(self.green_slider, 8, 2, 1, 1)
 
-        self.trail_check_box = QCheckBox(self.aesthetics)
-        self.trail_check_box.setObjectName(u"trail_check_box")
+        self.red_slider = QSlider(self.aesthetics)
+        self.red_slider.setObjectName(u"red_slider")
+        self.red_slider.setOrientation(Qt.Horizontal)
 
-        self.gridLayout_20.addWidget(self.trail_check_box, 10, 0, 1, 1)
+        self.gridLayout_20.addWidget(self.red_slider, 4, 2, 1, 1)
 
         self.toolBox.addItem(self.aesthetics, u"aesthetics")
         self.page = QWidget()
         self.page.setObjectName(u"page")
-        self.page.setGeometry(QRect(0, 0, 347, 194))
+        self.page.setGeometry(QRect(0, 0, 417, 265))
         self.gridLayout_5 = QGridLayout(self.page)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
         self.label_4 = QLabel(self.page)
@@ -165,7 +165,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page, u"position")
         self.page_2 = QWidget()
         self.page_2.setObjectName(u"page_2")
-        self.page_2.setGeometry(QRect(0, 0, 347, 194))
+        self.page_2.setGeometry(QRect(0, 0, 417, 265))
         self.gridLayout_6 = QGridLayout(self.page_2)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
         self.label_7 = QLabel(self.page_2)
@@ -219,7 +219,7 @@ class Ui_MainWindow(object):
         self.toolBox.addItem(self.page_2, u"velocity")
         self.page_3 = QWidget()
         self.page_3.setObjectName(u"page_3")
-        self.page_3.setGeometry(QRect(0, 0, 347, 194))
+        self.page_3.setGeometry(QRect(0, 0, 417, 265))
         self.gridLayout_7 = QGridLayout(self.page_3)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
         self.label_10 = QLabel(self.page_3)
@@ -281,15 +281,20 @@ class Ui_MainWindow(object):
         self.groupBox.setObjectName(u"groupBox")
         self.gridLayout_3 = QGridLayout(self.groupBox)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.remove_particle_button = QPushButton(self.groupBox)
-        self.remove_particle_button.setObjectName(u"remove_particle_button")
+        self.label_31 = QLabel(self.groupBox)
+        self.label_31.setObjectName(u"label_31")
 
-        self.gridLayout_3.addWidget(self.remove_particle_button, 2, 0, 1, 3)
+        self.gridLayout_3.addWidget(self.label_31, 1, 1, 1, 1)
 
         self.particle_list = QListWidget(self.groupBox)
         self.particle_list.setObjectName(u"particle_list")
 
         self.gridLayout_3.addWidget(self.particle_list, 3, 0, 1, 3)
+
+        self.remove_particle_button = QPushButton(self.groupBox)
+        self.remove_particle_button.setObjectName(u"remove_particle_button")
+
+        self.gridLayout_3.addWidget(self.remove_particle_button, 2, 0, 1, 3)
 
         self.clear_particle_list_button = QPushButton(self.groupBox)
         self.clear_particle_list_button.setObjectName(u"clear_particle_list_button")
@@ -305,11 +310,6 @@ class Ui_MainWindow(object):
         self.add_particle_button.setObjectName(u"add_particle_button")
 
         self.gridLayout_3.addWidget(self.add_particle_button, 1, 0, 1, 1)
-
-        self.label_31 = QLabel(self.groupBox)
-        self.label_31.setObjectName(u"label_31")
-
-        self.gridLayout_3.addWidget(self.label_31, 1, 1, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.groupBox, 0, 0, 1, 1)
@@ -327,7 +327,7 @@ class Ui_MainWindow(object):
         self.toolBox_2.setObjectName(u"toolBox_2")
         self.page_4 = QWidget()
         self.page_4.setObjectName(u"page_4")
-        self.page_4.setGeometry(QRect(0, 0, 196, 287))
+        self.page_4.setGeometry(QRect(0, 0, 417, 358))
         self.gridLayout_9 = QGridLayout(self.page_4)
         self.gridLayout_9.setObjectName(u"gridLayout_9")
         self.label_13 = QLabel(self.page_4)
@@ -363,25 +363,25 @@ class Ui_MainWindow(object):
 
         self.gridLayout_9.addWidget(self.label_15, 2, 0, 1, 1)
 
-        self.lineEdit_12 = QLineEdit(self.page_4)
-        self.lineEdit_12.setObjectName(u"lineEdit_12")
+        self.particle_position_x = QLineEdit(self.page_4)
+        self.particle_position_x.setObjectName(u"particle_position_x")
 
-        self.gridLayout_9.addWidget(self.lineEdit_12, 0, 1, 1, 1)
+        self.gridLayout_9.addWidget(self.particle_position_x, 0, 1, 1, 1)
 
-        self.lineEdit_13 = QLineEdit(self.page_4)
-        self.lineEdit_13.setObjectName(u"lineEdit_13")
+        self.particle_position_y = QLineEdit(self.page_4)
+        self.particle_position_y.setObjectName(u"particle_position_y")
 
-        self.gridLayout_9.addWidget(self.lineEdit_13, 1, 1, 1, 1)
+        self.gridLayout_9.addWidget(self.particle_position_y, 1, 1, 1, 1)
 
-        self.lineEdit_14 = QLineEdit(self.page_4)
-        self.lineEdit_14.setObjectName(u"lineEdit_14")
+        self.particle_position_z = QLineEdit(self.page_4)
+        self.particle_position_z.setObjectName(u"particle_position_z")
 
-        self.gridLayout_9.addWidget(self.lineEdit_14, 2, 1, 1, 1)
+        self.gridLayout_9.addWidget(self.particle_position_z, 2, 1, 1, 1)
 
         self.toolBox_2.addItem(self.page_4, u"position")
         self.page_5 = QWidget()
         self.page_5.setObjectName(u"page_5")
-        self.page_5.setGeometry(QRect(0, 0, 129, 108))
+        self.page_5.setGeometry(QRect(0, 0, 417, 358))
         self.gridLayout_11 = QGridLayout(self.page_5)
         self.gridLayout_11.setObjectName(u"gridLayout_11")
         self.label_16 = QLabel(self.page_5)
@@ -389,10 +389,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addWidget(self.label_16, 0, 0, 1, 1)
 
-        self.lineEdit_15 = QLineEdit(self.page_5)
-        self.lineEdit_15.setObjectName(u"lineEdit_15")
+        self.particle_velocity_x = QLineEdit(self.page_5)
+        self.particle_velocity_x.setObjectName(u"particle_velocity_x")
 
-        self.gridLayout_11.addWidget(self.lineEdit_15, 0, 1, 1, 1)
+        self.gridLayout_11.addWidget(self.particle_velocity_x, 0, 1, 1, 1)
 
         self.horizontalSlider_16 = QSlider(self.page_5)
         self.horizontalSlider_16.setObjectName(u"horizontalSlider_16")
@@ -405,10 +405,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addWidget(self.label_17, 1, 0, 1, 1)
 
-        self.lineEdit_16 = QLineEdit(self.page_5)
-        self.lineEdit_16.setObjectName(u"lineEdit_16")
+        self.particle_velocity_y = QLineEdit(self.page_5)
+        self.particle_velocity_y.setObjectName(u"particle_velocity_y")
 
-        self.gridLayout_11.addWidget(self.lineEdit_16, 1, 1, 1, 1)
+        self.gridLayout_11.addWidget(self.particle_velocity_y, 1, 1, 1, 1)
 
         self.horizontalSlider_17 = QSlider(self.page_5)
         self.horizontalSlider_17.setObjectName(u"horizontalSlider_17")
@@ -421,10 +421,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_11.addWidget(self.label_18, 2, 0, 1, 1)
 
-        self.lineEdit_17 = QLineEdit(self.page_5)
-        self.lineEdit_17.setObjectName(u"lineEdit_17")
+        self.particle_velocity_z = QLineEdit(self.page_5)
+        self.particle_velocity_z.setObjectName(u"particle_velocity_z")
 
-        self.gridLayout_11.addWidget(self.lineEdit_17, 2, 1, 1, 1)
+        self.gridLayout_11.addWidget(self.particle_velocity_z, 2, 1, 1, 1)
 
         self.horizontalSlider_18 = QSlider(self.page_5)
         self.horizontalSlider_18.setObjectName(u"horizontalSlider_18")
@@ -435,7 +435,7 @@ class Ui_MainWindow(object):
         self.toolBox_2.addItem(self.page_5, u"velocity")
         self.page_8 = QWidget()
         self.page_8.setObjectName(u"page_8")
-        self.page_8.setGeometry(QRect(0, 0, 129, 108))
+        self.page_8.setGeometry(QRect(0, 0, 417, 358))
         self.gridLayout_12 = QGridLayout(self.page_8)
         self.gridLayout_12.setObjectName(u"gridLayout_12")
         self.label_19 = QLabel(self.page_8)
@@ -443,10 +443,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.label_19, 0, 0, 1, 1)
 
-        self.lineEdit_18 = QLineEdit(self.page_8)
-        self.lineEdit_18.setObjectName(u"lineEdit_18")
+        self.particle_acceleration_x = QLineEdit(self.page_8)
+        self.particle_acceleration_x.setObjectName(u"particle_acceleration_x")
 
-        self.gridLayout_12.addWidget(self.lineEdit_18, 0, 1, 1, 1)
+        self.gridLayout_12.addWidget(self.particle_acceleration_x, 0, 1, 1, 1)
 
         self.horizontalSlider_19 = QSlider(self.page_8)
         self.horizontalSlider_19.setObjectName(u"horizontalSlider_19")
@@ -459,10 +459,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.label_20, 1, 0, 1, 1)
 
-        self.lineEdit_19 = QLineEdit(self.page_8)
-        self.lineEdit_19.setObjectName(u"lineEdit_19")
+        self.particle_acceleration_y = QLineEdit(self.page_8)
+        self.particle_acceleration_y.setObjectName(u"particle_acceleration_y")
 
-        self.gridLayout_12.addWidget(self.lineEdit_19, 1, 1, 1, 1)
+        self.gridLayout_12.addWidget(self.particle_acceleration_y, 1, 1, 1, 1)
 
         self.horizontalSlider_20 = QSlider(self.page_8)
         self.horizontalSlider_20.setObjectName(u"horizontalSlider_20")
@@ -475,10 +475,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.label_21, 2, 0, 1, 1)
 
-        self.lineEdit_20 = QLineEdit(self.page_8)
-        self.lineEdit_20.setObjectName(u"lineEdit_20")
+        self.particle_acceleration_y_2 = QLineEdit(self.page_8)
+        self.particle_acceleration_y_2.setObjectName(u"particle_acceleration_y_2")
 
-        self.gridLayout_12.addWidget(self.lineEdit_20, 2, 1, 1, 1)
+        self.gridLayout_12.addWidget(self.particle_acceleration_y_2, 2, 1, 1, 1)
 
         self.horizontalSlider_21 = QSlider(self.page_8)
         self.horizontalSlider_21.setObjectName(u"horizontalSlider_21")
@@ -497,31 +497,69 @@ class Ui_MainWindow(object):
         self.groupBox_4.setObjectName(u"groupBox_4")
         self.gridLayout_10 = QGridLayout(self.groupBox_4)
         self.gridLayout_10.setObjectName(u"gridLayout_10")
-        self.pushButton_4 = QPushButton(self.groupBox_4)
-        self.pushButton_4.setObjectName(u"pushButton_4")
+        self.add_fields_button = QPushButton(self.groupBox_4)
+        self.add_fields_button.setObjectName(u"add_fields_button")
 
-        self.gridLayout_10.addWidget(self.pushButton_4, 1, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.add_fields_button, 1, 0, 1, 1)
 
-        self.pushButton_6 = QPushButton(self.groupBox_4)
-        self.pushButton_6.setObjectName(u"pushButton_6")
+        self.label_38 = QLabel(self.groupBox_4)
+        self.label_38.setObjectName(u"label_38")
 
-        self.gridLayout_10.addWidget(self.pushButton_6, 4, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.label_38, 1, 1, 1, 1)
 
-        self.listView_2 = QListView(self.groupBox_4)
-        self.listView_2.setObjectName(u"listView_2")
+        self.field_name = QLineEdit(self.groupBox_4)
+        self.field_name.setObjectName(u"field_name")
 
-        self.gridLayout_10.addWidget(self.listView_2, 3, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.field_name, 1, 2, 1, 1)
 
-        self.pushButton_5 = QPushButton(self.groupBox_4)
-        self.pushButton_5.setObjectName(u"pushButton_5")
+        self.remove_fields_button = QPushButton(self.groupBox_4)
+        self.remove_fields_button.setObjectName(u"remove_fields_button")
 
-        self.gridLayout_10.addWidget(self.pushButton_5, 2, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.remove_fields_button, 2, 0, 1, 3)
 
         self.toolBox_3 = QToolBox(self.groupBox_4)
         self.toolBox_3.setObjectName(u"toolBox_3")
+        self.page_10 = QWidget()
+        self.page_10.setObjectName(u"page_10")
+        self.gridLayout_21 = QGridLayout(self.page_10)
+        self.gridLayout_21.setObjectName(u"gridLayout_21")
+        self.label_37 = QLabel(self.page_10)
+        self.label_37.setObjectName(u"label_37")
+
+        self.gridLayout_21.addWidget(self.label_37, 0, 0, 1, 1)
+
+        self.red_field_slider = QSlider(self.page_10)
+        self.red_field_slider.setObjectName(u"red_field_slider")
+        self.red_field_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_21.addWidget(self.red_field_slider, 0, 1, 1, 1)
+
+        self.label_36 = QLabel(self.page_10)
+        self.label_36.setObjectName(u"label_36")
+
+        self.gridLayout_21.addWidget(self.label_36, 1, 0, 1, 1)
+
+        self.green_field_slider = QSlider(self.page_10)
+        self.green_field_slider.setObjectName(u"green_field_slider")
+        self.green_field_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_21.addWidget(self.green_field_slider, 1, 1, 1, 1)
+
+        self.label_35 = QLabel(self.page_10)
+        self.label_35.setObjectName(u"label_35")
+
+        self.gridLayout_21.addWidget(self.label_35, 2, 0, 1, 1)
+
+        self.blue_field_slider = QSlider(self.page_10)
+        self.blue_field_slider.setObjectName(u"blue_field_slider")
+        self.blue_field_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_21.addWidget(self.blue_field_slider, 2, 1, 1, 1)
+
+        self.toolBox_3.addItem(self.page_10, u"aesthetics")
         self.page_6 = QWidget()
         self.page_6.setObjectName(u"page_6")
-        self.page_6.setGeometry(QRect(0, 0, 478, 148))
+        self.page_6.setGeometry(QRect(0, -47, 548, 148))
         self.gridLayout_14 = QGridLayout(self.page_6)
         self.gridLayout_14.setObjectName(u"gridLayout_14")
         self.groupBox_5 = QGroupBox(self.page_6)
@@ -533,10 +571,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_15.addWidget(self.label_23, 0, 0, 1, 1)
 
-        self.lineEdit_23 = QLineEdit(self.groupBox_5)
-        self.lineEdit_23.setObjectName(u"lineEdit_23")
+        self.middle_point_x = QLineEdit(self.groupBox_5)
+        self.middle_point_x.setObjectName(u"middle_point_x")
 
-        self.gridLayout_15.addWidget(self.lineEdit_23, 0, 1, 1, 1)
+        self.gridLayout_15.addWidget(self.middle_point_x, 0, 1, 1, 1)
 
         self.horizontalSlider_22 = QSlider(self.groupBox_5)
         self.horizontalSlider_22.setObjectName(u"horizontalSlider_22")
@@ -549,10 +587,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_15.addWidget(self.label_22, 1, 0, 1, 1)
 
-        self.lineEdit_22 = QLineEdit(self.groupBox_5)
-        self.lineEdit_22.setObjectName(u"lineEdit_22")
+        self.middle_point_y = QLineEdit(self.groupBox_5)
+        self.middle_point_y.setObjectName(u"middle_point_y")
 
-        self.gridLayout_15.addWidget(self.lineEdit_22, 1, 1, 1, 1)
+        self.gridLayout_15.addWidget(self.middle_point_y, 1, 1, 1, 1)
 
         self.horizontalSlider_23 = QSlider(self.groupBox_5)
         self.horizontalSlider_23.setObjectName(u"horizontalSlider_23")
@@ -565,10 +603,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_15.addWidget(self.label_24, 2, 0, 1, 1)
 
-        self.lineEdit_21 = QLineEdit(self.groupBox_5)
-        self.lineEdit_21.setObjectName(u"lineEdit_21")
+        self.middle_point_z = QLineEdit(self.groupBox_5)
+        self.middle_point_z.setObjectName(u"middle_point_z")
 
-        self.gridLayout_15.addWidget(self.lineEdit_21, 2, 1, 1, 1)
+        self.gridLayout_15.addWidget(self.middle_point_z, 2, 1, 1, 1)
 
         self.horizontalSlider_24 = QSlider(self.groupBox_5)
         self.horizontalSlider_24.setObjectName(u"horizontalSlider_24")
@@ -588,10 +626,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_16.addWidget(self.label_26, 0, 0, 1, 1)
 
-        self.lineEdit_26 = QLineEdit(self.groupBox_6)
-        self.lineEdit_26.setObjectName(u"lineEdit_26")
+        self.size_x = QLineEdit(self.groupBox_6)
+        self.size_x.setObjectName(u"size_x")
 
-        self.gridLayout_16.addWidget(self.lineEdit_26, 0, 1, 1, 1)
+        self.gridLayout_16.addWidget(self.size_x, 0, 1, 1, 1)
 
         self.horizontalSlider_25 = QSlider(self.groupBox_6)
         self.horizontalSlider_25.setObjectName(u"horizontalSlider_25")
@@ -604,10 +642,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_16.addWidget(self.label_25, 1, 0, 1, 1)
 
-        self.lineEdit_25 = QLineEdit(self.groupBox_6)
-        self.lineEdit_25.setObjectName(u"lineEdit_25")
+        self.size_y = QLineEdit(self.groupBox_6)
+        self.size_y.setObjectName(u"size_y")
 
-        self.gridLayout_16.addWidget(self.lineEdit_25, 1, 1, 1, 1)
+        self.gridLayout_16.addWidget(self.size_y, 1, 1, 1, 1)
 
         self.horizontalSlider_26 = QSlider(self.groupBox_6)
         self.horizontalSlider_26.setObjectName(u"horizontalSlider_26")
@@ -620,10 +658,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_16.addWidget(self.label_27, 2, 0, 1, 1)
 
-        self.lineEdit_24 = QLineEdit(self.groupBox_6)
-        self.lineEdit_24.setObjectName(u"lineEdit_24")
+        self.size_z = QLineEdit(self.groupBox_6)
+        self.size_z.setObjectName(u"size_z")
 
-        self.gridLayout_16.addWidget(self.lineEdit_24, 2, 1, 1, 1)
+        self.gridLayout_16.addWidget(self.size_z, 2, 1, 1, 1)
 
         self.horizontalSlider_27 = QSlider(self.groupBox_6)
         self.horizontalSlider_27.setObjectName(u"horizontalSlider_27")
@@ -637,7 +675,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.page_6, u"position")
         self.page_7 = QWidget()
         self.page_7.setObjectName(u"page_7")
-        self.page_7.setGeometry(QRect(0, 0, 129, 108))
+        self.page_7.setGeometry(QRect(0, -23, 397, 108))
         self.gridLayout_17 = QGridLayout(self.page_7)
         self.gridLayout_17.setObjectName(u"gridLayout_17")
         self.label_29 = QLabel(self.page_7)
@@ -645,10 +683,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.label_29, 0, 0, 1, 1)
 
-        self.lineEdit_29 = QLineEdit(self.page_7)
-        self.lineEdit_29.setObjectName(u"lineEdit_29")
+        self.field_vector_x = QLineEdit(self.page_7)
+        self.field_vector_x.setObjectName(u"field_vector_x")
 
-        self.gridLayout_17.addWidget(self.lineEdit_29, 0, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.field_vector_x, 0, 1, 1, 1)
 
         self.horizontalSlider_28 = QSlider(self.page_7)
         self.horizontalSlider_28.setObjectName(u"horizontalSlider_28")
@@ -661,10 +699,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.label_28, 1, 0, 1, 1)
 
-        self.lineEdit_28 = QLineEdit(self.page_7)
-        self.lineEdit_28.setObjectName(u"lineEdit_28")
+        self.field_vector_y = QLineEdit(self.page_7)
+        self.field_vector_y.setObjectName(u"field_vector_y")
 
-        self.gridLayout_17.addWidget(self.lineEdit_28, 1, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.field_vector_y, 1, 1, 1, 1)
 
         self.horizontalSlider_29 = QSlider(self.page_7)
         self.horizontalSlider_29.setObjectName(u"horizontalSlider_29")
@@ -677,10 +715,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.label_30, 2, 0, 1, 1)
 
-        self.lineEdit_27 = QLineEdit(self.page_7)
-        self.lineEdit_27.setObjectName(u"lineEdit_27")
+        self.field_vector_z = QLineEdit(self.page_7)
+        self.field_vector_z.setObjectName(u"field_vector_z")
 
-        self.gridLayout_17.addWidget(self.lineEdit_27, 2, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.field_vector_z, 2, 1, 1, 1)
 
         self.horizontalSlider_30 = QSlider(self.page_7)
         self.horizontalSlider_30.setObjectName(u"horizontalSlider_30")
@@ -691,24 +729,34 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.page_7, u"magnitute and direction")
         self.page_9 = QWidget()
         self.page_9.setObjectName(u"page_9")
-        self.page_9.setGeometry(QRect(0, 0, 129, 69))
+        self.page_9.setGeometry(QRect(0, 0, 418, 85))
         self.gridLayout_18 = QGridLayout(self.page_9)
         self.gridLayout_18.setObjectName(u"gridLayout_18")
-        self.radioButton_2 = QRadioButton(self.page_9)
-        self.radioButton_2.setObjectName(u"radioButton_2")
+        self.magnetic_field_radio = QRadioButton(self.page_9)
+        self.magnetic_field_radio.setObjectName(u"magnetic_field_radio")
 
-        self.gridLayout_18.addWidget(self.radioButton_2, 3, 0, 1, 1)
+        self.gridLayout_18.addWidget(self.magnetic_field_radio, 3, 0, 1, 1)
 
-        self.radioButton = QRadioButton(self.page_9)
-        self.radioButton.setObjectName(u"radioButton")
-        self.radioButton.setCheckable(True)
-        self.radioButton.setChecked(False)
+        self.electric_field_radio = QRadioButton(self.page_9)
+        self.electric_field_radio.setObjectName(u"electric_field_radio")
+        self.electric_field_radio.setCheckable(True)
+        self.electric_field_radio.setChecked(False)
 
-        self.gridLayout_18.addWidget(self.radioButton, 2, 0, 1, 1)
+        self.gridLayout_18.addWidget(self.electric_field_radio, 2, 0, 1, 1)
 
         self.toolBox_3.addItem(self.page_9, u"type")
 
-        self.gridLayout_10.addWidget(self.toolBox_3, 5, 0, 1, 1)
+        self.gridLayout_10.addWidget(self.toolBox_3, 5, 0, 1, 3)
+
+        self.fields_list = QListWidget(self.groupBox_4)
+        self.fields_list.setObjectName(u"fields_list")
+
+        self.gridLayout_10.addWidget(self.fields_list, 3, 0, 1, 3)
+
+        self.clear_list_button = QPushButton(self.groupBox_4)
+        self.clear_list_button.setObjectName(u"clear_list_button")
+
+        self.gridLayout_10.addWidget(self.clear_list_button, 4, 0, 1, 3)
 
 
         self.gridLayout_8.addWidget(self.groupBox_4, 0, 0, 1, 1)
@@ -758,7 +806,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 800, 26))
+        self.menubar.setGeometry(QRect(0, 0, 940, 26))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -780,10 +828,10 @@ class Ui_MainWindow(object):
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"particle controls", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"mass:", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"charge:", None))
+        self.trail_check_box.setText(QCoreApplication.translate("MainWindow", u"trail", None))
         self.label_32.setText(QCoreApplication.translate("MainWindow", u"blue:", None))
         self.label_33.setText(QCoreApplication.translate("MainWindow", u"red:", None))
         self.label_34.setText(QCoreApplication.translate("MainWindow", u"green:", None))
-        self.trail_check_box.setText(QCoreApplication.translate("MainWindow", u"trail", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.aesthetics), QCoreApplication.translate("MainWindow", u"aesthetics", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"X:", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Y:", None))
@@ -798,10 +846,10 @@ class Ui_MainWindow(object):
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
         self.toolBox.setItemText(self.toolBox.indexOf(self.page_3), QCoreApplication.translate("MainWindow", u"acceleration", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"particle list", None))
+        self.label_31.setText(QCoreApplication.translate("MainWindow", u"name:", None))
         self.remove_particle_button.setText(QCoreApplication.translate("MainWindow", u"remove particle", None))
         self.clear_particle_list_button.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
         self.add_particle_button.setText(QCoreApplication.translate("MainWindow", u"add particle", None))
-        self.label_31.setText(QCoreApplication.translate("MainWindow", u"name:", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"electrical interaction between particles", None))
         self.groupBox_3.setTitle(QCoreApplication.translate("MainWindow", u"particle", None))
         self.label_13.setText(QCoreApplication.translate("MainWindow", u"X:", None))
@@ -817,14 +865,18 @@ class Ui_MainWindow(object):
         self.label_21.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
         self.toolBox_2.setItemText(self.toolBox_2.indexOf(self.page_8), QCoreApplication.translate("MainWindow", u"acceleration", None))
         self.groupBox_4.setTitle(QCoreApplication.translate("MainWindow", u"fildes", None))
-        self.pushButton_4.setText(QCoreApplication.translate("MainWindow", u"add fields", None))
-        self.pushButton_6.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
-        self.pushButton_5.setText(QCoreApplication.translate("MainWindow", u"remove field", None))
-        self.groupBox_5.setTitle(QCoreApplication.translate("MainWindow", u"starting point", None))
+        self.add_fields_button.setText(QCoreApplication.translate("MainWindow", u"add fields", None))
+        self.label_38.setText(QCoreApplication.translate("MainWindow", u"name: ", None))
+        self.remove_fields_button.setText(QCoreApplication.translate("MainWindow", u"remove field", None))
+        self.label_37.setText(QCoreApplication.translate("MainWindow", u"red:", None))
+        self.label_36.setText(QCoreApplication.translate("MainWindow", u"green:", None))
+        self.label_35.setText(QCoreApplication.translate("MainWindow", u"blue:", None))
+        self.toolBox_3.setItemText(self.toolBox_3.indexOf(self.page_10), QCoreApplication.translate("MainWindow", u"aesthetics", None))
+        self.groupBox_5.setTitle(QCoreApplication.translate("MainWindow", u"middle point", None))
         self.label_23.setText(QCoreApplication.translate("MainWindow", u"X:", None))
         self.label_22.setText(QCoreApplication.translate("MainWindow", u"Y:", None))
         self.label_24.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
-        self.groupBox_6.setTitle(QCoreApplication.translate("MainWindow", u"ending point", None))
+        self.groupBox_6.setTitle(QCoreApplication.translate("MainWindow", u"size", None))
         self.label_26.setText(QCoreApplication.translate("MainWindow", u"X:", None))
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"Y:", None))
         self.label_27.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
@@ -833,9 +885,10 @@ class Ui_MainWindow(object):
         self.label_28.setText(QCoreApplication.translate("MainWindow", u"Y:", None))
         self.label_30.setText(QCoreApplication.translate("MainWindow", u"Z:", None))
         self.toolBox_3.setItemText(self.toolBox_3.indexOf(self.page_7), QCoreApplication.translate("MainWindow", u"magnitute and direction", None))
-        self.radioButton_2.setText(QCoreApplication.translate("MainWindow", u"magnetic field", None))
-        self.radioButton.setText(QCoreApplication.translate("MainWindow", u"electric field", None))
+        self.magnetic_field_radio.setText(QCoreApplication.translate("MainWindow", u"magnetic field", None))
+        self.electric_field_radio.setText(QCoreApplication.translate("MainWindow", u"electric field", None))
         self.toolBox_3.setItemText(self.toolBox_3.indexOf(self.page_9), QCoreApplication.translate("MainWindow", u"type", None))
+        self.clear_list_button.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"electro-magnetic effect of fields on a particle", None))
         self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"simulation controls", None))
         self.run_button.setText(QCoreApplication.translate("MainWindow", u"run", None))

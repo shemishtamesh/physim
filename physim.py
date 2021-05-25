@@ -57,9 +57,6 @@ class Field:
 
         self.box = box(pos=vector(0, 0, 0), axis=vector(0, 0, 0), size=vector(0, 0, 0))
 
-    def draw(self, position):
-        pass  # TODO: implement draw with small arrows
-
 
 def update(self, force):
     print(force)
@@ -70,4 +67,4 @@ def update(self, force):
     self.pos += self.velocity * dt
 
 
-sphere.update_particle = update
+sphere.update = update

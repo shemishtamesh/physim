@@ -32,6 +32,9 @@ class MainWindow(qtw.QMainWindow):
         self.ui.green_slider.setValue(99)
         self.ui.blue_slider.setValue(99)
 
+        # electro-magnetic effect of fields on a particle:
+        self.ui.add_fields_button.clicked.connect(self.add_field)
+
         # global variables:
         self.paused = True
         self.frame_rate = 24
@@ -41,7 +44,8 @@ class MainWindow(qtw.QMainWindow):
         temp_shape = sphere(opacity=0)
         del temp_shape
 
-        self.system = EibpSystem([])
+        self.eibp_system = EibpSystem([])
+        self.emeofoap_system = EmeofoapSystem([])
         self.main_sim_loop()
 
     def main_sim_loop(self):
@@ -140,6 +144,48 @@ class MainWindow(qtw.QMainWindow):
         while self.ui.particle_list.count() > 0:
             self.system.remove_particle(0)
             self.ui.particle_list.takeItem(0)
+
+    # for electro-magnetic effect of fields on a particle:
+    def add_field(self):
+        try:
+            x_pos = default_value(self.ui.middle_point_x.text())
+            y_pos = default_value(self.ui.middle_point_y.text())
+            z_pos = default_value(self.ui.middle_point_z.text())
+
+            x_size = default_value(self.ui.size_x.text())
+            y_size = default_value(self.ui.size_y.text())
+            z_size = default_value(self.ui.size_z.text())
+
+            x_field_vector = default_value(self.ui.field_vector_x.text())
+            y_field_vector = default_value(self.ui.field_vector_y.text())
+            z_field_vector = default_value(self.ui.field_vector_z.text())
+
+        except TypeError:
+            qtw.QMessageBox.critical(None, 'Fail', "arguments for creating particles must be numbers.")
+            return
+
+        position = vector(x_pos, y_pos, z_pos)
+        size = vector(x_size, y_size, z_size)
+        field_vector = vector(x_field_vector, y_field_vector, z_field_vector)
+
+        field_color = vector(self.ui.red_field_slider.value()/99,
+                             self.ui.blue_field_slider.value()/99,
+                             self.ui.green_field_slider.value()/99)
+
+        # TODO: check is magnetic or electric
+
+        new_field = box(pos=position, color=field_color, size=size, field_vector=field_vector, opacity=.2)
+        attach_arrow(new_field, "field_vector", scale=.5, shaftwidth=.05, opacity=.1, color=color.white-field_color)
+
+        self.emeofoap_system.fields.append(new_field)
+
+        particle_name = self.ui.name_input_line.text()
+        if particle_name:
+            self.ui.particle_list.addItem(self.ui.name_input_line.text())
+        else:
+            particle_index = self.ui.particle_list.count()
+            self.ui.particle_list.addItem(f"particle {particle_index}")
+
 
     # event handling:
     def closeEvent(self, event):
