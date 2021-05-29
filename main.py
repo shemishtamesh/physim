@@ -23,6 +23,7 @@ class MainWindow(qtw.QMainWindow):
         self.ui.run_button.clicked.connect(self.run)
         self.ui.pause_button.clicked.connect(self.pause)
         self.ui.set_frame_rate_button.clicked.connect(self.set_frame_rate)
+        self.ui.reset_button.clicked.connect(self.reset_system)
 
         # electrical interaction between particles:
         self.ui.add_particle_button.clicked.connect(self.add_particle)
@@ -34,6 +35,9 @@ class MainWindow(qtw.QMainWindow):
 
         # electro-magnetic effect of fields on a particle:
         self.ui.add_fields_button.clicked.connect(self.add_field)
+        self.ui.red_field_slider.setValue(99)
+        self.ui.green_field_slider.setValue(99)
+        self.ui.blue_field_slider.setValue(99)
 
         # global variables:
         self.paused = True
@@ -41,25 +45,71 @@ class MainWindow(qtw.QMainWindow):
         self.is_still_running = True
 
         # start simulation:
-        temp_shape = sphere(opacity=0)
-        del temp_shape
+        x_axis = arrow(pos=vector(-10, -10, -10), axis=vector(20, 0, 0), shaftwidth=0.2, color=color.red)
+        y_axis = arrow(pos=vector(-10, -10, -10), axis=vector(0, 20, 0), shaftwidth=0.2, color=color.blue)
+        z_axis = arrow(pos=vector(-10, -10, -10), axis=vector(0, 0, 20), shaftwidth=0.2, color=color.green)
 
+        self.eibp_system_start = None
         self.eibp_system = EibpSystem([])
+
+        self.emeofoap_system_start = None
         self.emeofoap_system = EmeofoapSystem([])
+
         self.main_sim_loop()
 
     def main_sim_loop(self):
+        curret_tab = self.ui.tabWidget.currentIndex()
         rate(self.frame_rate)
-        if not self.paused:
-            self.system.update()
+        if curret_tab == 0:  # tab number 0 is eibp
+            self.emeofoap_system.make_invisible()
+            self.eibp_system.make_visible()
+            if not self.paused:
+                self.eibp_system.update()
+        else:  # the other tab is emeofoap
+            self.eibp_system.make_invisible()
+            self.emeofoap_system.make_visible()
+            if not self.paused:
+                self.emeofoap_system.update()
+
         if self.is_still_running:
             qtc.QTimer.singleShot(25, self.main_sim_loop)
-        else:
-            pass
 
     # for simulation controls:
+    def reset_system(self):
+        self.paused = True
+
+        self.ui.add_particle_button.setEnabled(True)
+        self.ui.remove_particle_button.setEnabled(True)
+        self.ui.clear_particle_list_button.setEnabled(True)
+
+        if self.eibp_system_start:
+            self.eibp_system.make_invisible()
+            while len(self.eibp_system.particles) > 0:
+                self.eibp_system.remove_particle(0)
+            self.eibp_system = self.eibp_system_start
+            self.eibp_system_start = None
+            self.eibp_system.make_visible()
+
     def run(self):
         self.paused = False
+
+        self.ui.add_particle_button.setEnabled(False)
+        self.ui.remove_particle_button.setEnabled(False)
+        self.ui.clear_particle_list_button.setEnabled(False)
+
+        if not self.eibp_system_start:
+            self.eibp_system_start = EibpSystem()
+            for particle in self.eibp_system.particles:
+                self.eibp_system_start.particles.append(sphere(pos=particle.pos,
+                                                               color=particle.color,
+                                                               radius=0.1,
+                                                               mass=particle.mass,
+                                                               acceleration=particle.acceleration,
+                                                               charge=particle.charge,
+                                                               velocity=particle.velocity,
+                                                               make_trail=particle.make_trail))
+
+            self.eibp_system_start.make_invisible()
 
     def pause(self):
         self.paused = True
@@ -77,20 +127,20 @@ class MainWindow(qtw.QMainWindow):
     # for electrical interaction between particles:
     def add_particle(self):
         try:
-            x_pos = default_value(self.ui.x_eibp_position_line_edit.text())
-            y_pos = default_value(self.ui.y_eibp_position_line_edit.text())
-            z_pos = default_value(self.ui.z_eibp_position_line_edit.text())
+            x_pos = default_value_0(self.ui.x_eibp_position_line_edit.text())
+            y_pos = default_value_0(self.ui.y_eibp_position_line_edit.text())
+            z_pos = default_value_0(self.ui.z_eibp_position_line_edit.text())
 
-            x_vel = default_value(self.ui.x_eibp_velocity_line_edit.text())
-            y_vel = default_value(self.ui.y_eibp_velocity_line_edit.text())
-            z_vel = default_value(self.ui.z_eibp_velocity_line_edit.text())
+            x_vel = default_value_0(self.ui.x_eibp_velocity_line_edit.text())
+            y_vel = default_value_0(self.ui.y_eibp_velocity_line_edit.text())
+            z_vel = default_value_0(self.ui.z_eibp_velocity_line_edit.text())
 
-            x_acc = default_value(self.ui.x_eibp_acceleration_line_edit.text())
-            y_acc = default_value(self.ui.y_eibp_acceleration_line_edit.text())
-            z_acc = default_value(self.ui.z_eibp_acceleration_line_edit.text())
+            x_acc = default_value_0(self.ui.x_eibp_acceleration_line_edit.text())
+            y_acc = default_value_0(self.ui.y_eibp_acceleration_line_edit.text())
+            z_acc = default_value_0(self.ui.z_eibp_acceleration_line_edit.text())
 
-            charge = default_value(self.ui.charge_eibp_line_edit.text())
-            mass = default_value_mass(self.ui.mass_eibp_line_edit.text())
+            charge = default_value_0(self.ui.charge_eibp_line_edit.text())
+            mass = default_value_1(self.ui.mass_eibp_line_edit.text())
         except TypeError:
             qtw.QMessageBox.critical(None, 'Fail', "arguments for creating particles must be numbers.")
             return
@@ -114,7 +164,7 @@ class MainWindow(qtw.QMainWindow):
                               velocity=velocity,
                               make_trail=does_have_trail)
 
-        self.system.particles.append(new_particle)
+        self.eibp_system.particles.append(new_particle)
 
         particle_name = self.ui.name_input_line.text()
         if particle_name:
@@ -125,7 +175,7 @@ class MainWindow(qtw.QMainWindow):
 
     def remove_particle(self):
         try:
-            selected_item_from_list = self.ui.particle_list.selectedItems()[0]
+            self.ui.particle_list.selectedItems()[0]
         except IndexError:
             qtw.QMessageBox.critical(None, 'Fail', "you have to select a particle if you want to remove one.")
             return
@@ -137,28 +187,28 @@ class MainWindow(qtw.QMainWindow):
 
         if are_you_sure_message == qtw.QMessageBox.Yes:
             index_on_list = self.ui.particle_list.currentRow()
-            self.system.remove_particle(index_on_list)
+            self.eibp_system.remove_particle(index_on_list)
             self.ui.particle_list.takeItem(index_on_list)
 
     def clear_list(self):
         while self.ui.particle_list.count() > 0:
-            self.system.remove_particle(0)
+            self.eibp_system.remove_particle(0)
             self.ui.particle_list.takeItem(0)
 
     # for electro-magnetic effect of fields on a particle:
     def add_field(self):
         try:
-            x_pos = default_value(self.ui.middle_point_x.text())
-            y_pos = default_value(self.ui.middle_point_y.text())
-            z_pos = default_value(self.ui.middle_point_z.text())
+            x_pos = default_value_0(self.ui.middle_point_x.text())
+            y_pos = default_value_0(self.ui.middle_point_y.text())
+            z_pos = default_value_0(self.ui.middle_point_z.text())
 
-            x_size = default_value(self.ui.size_x.text())
-            y_size = default_value(self.ui.size_y.text())
-            z_size = default_value(self.ui.size_z.text())
+            x_size = default_value_1(self.ui.size_x.text())
+            y_size = default_value_1(self.ui.size_y.text())
+            z_size = default_value_1(self.ui.size_z.text())
 
-            x_field_vector = default_value(self.ui.field_vector_x.text())
-            y_field_vector = default_value(self.ui.field_vector_y.text())
-            z_field_vector = default_value(self.ui.field_vector_z.text())
+            x_field_vector = default_value_1(self.ui.field_vector_x.text())
+            y_field_vector = default_value_1(self.ui.field_vector_y.text())
+            z_field_vector = default_value_1(self.ui.field_vector_z.text())
 
         except TypeError:
             qtw.QMessageBox.critical(None, 'Fail', "arguments for creating particles must be numbers.")
@@ -172,9 +222,12 @@ class MainWindow(qtw.QMainWindow):
                              self.ui.blue_field_slider.value()/99,
                              self.ui.green_field_slider.value()/99)
 
-        # TODO: check is magnetic or electric
+        if self.ui.magnetic_field_radio.isChecked():
+            field_type = "magnetic"
+        else:
+            field_type = "electric"
 
-        new_field = box(pos=position, color=field_color, size=size, field_vector=field_vector, opacity=.2)
+        new_field = box(pos=position, color=field_color, size=size, field_vector=field_vector, opacity=.2, field_type=field_type)
         attach_arrow(new_field, "field_vector", scale=.5, shaftwidth=.05, opacity=.1, color=color.white-field_color)
 
         self.emeofoap_system.fields.append(new_field)
@@ -185,7 +238,6 @@ class MainWindow(qtw.QMainWindow):
         else:
             particle_index = self.ui.particle_list.count()
             self.ui.particle_list.addItem(f"particle {particle_index}")
-
 
     # event handling:
     def closeEvent(self, event):

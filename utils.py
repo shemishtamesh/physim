@@ -51,14 +51,14 @@ def magnetic_force(p1, p2):
     return (mu0/(4*pi)) * (q1 * q2 / (mag(pos_diff)**2)) * cross(v1, cross(v2, norm(pos_diff)))
 
 
-def default_value(string):
+def default_value_0(string):
     if string == '':
         return 0
     else:
         return float(string)  # we catch the potentioal error when calling this function
 
 
-def default_value_mass(string):
+def default_value_1(string):
     if string == '':
         return 1
     else:

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'physim_guiUCqbzL.ui'
+## Form generated from reading UI file 'physim_guiZQLYvm.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -90,6 +90,12 @@ class Ui_MainWindow(object):
 
         self.gridLayout_20.addWidget(self.label_34, 8, 0, 1, 1)
 
+        self.red_slider = QSlider(self.aesthetics)
+        self.red_slider.setObjectName(u"red_slider")
+        self.red_slider.setOrientation(Qt.Horizontal)
+
+        self.gridLayout_20.addWidget(self.red_slider, 4, 2, 1, 1)
+
         self.blue_slider = QSlider(self.aesthetics)
         self.blue_slider.setObjectName(u"blue_slider")
         self.blue_slider.setOrientation(Qt.Horizontal)
@@ -101,12 +107,6 @@ class Ui_MainWindow(object):
         self.green_slider.setOrientation(Qt.Horizontal)
 
         self.gridLayout_20.addWidget(self.green_slider, 8, 2, 1, 1)
-
-        self.red_slider = QSlider(self.aesthetics)
-        self.red_slider.setObjectName(u"red_slider")
-        self.red_slider.setOrientation(Qt.Horizontal)
-
-        self.gridLayout_20.addWidget(self.red_slider, 4, 2, 1, 1)
 
         self.toolBox.addItem(self.aesthetics, u"aesthetics")
         self.page = QWidget()
@@ -675,7 +675,7 @@ class Ui_MainWindow(object):
         self.toolBox_3.addItem(self.page_6, u"position")
         self.page_7 = QWidget()
         self.page_7.setObjectName(u"page_7")
-        self.page_7.setGeometry(QRect(0, -23, 397, 108))
+        self.page_7.setGeometry(QRect(0, 0, 397, 108))
         self.gridLayout_17 = QGridLayout(self.page_7)
         self.gridLayout_17.setObjectName(u"gridLayout_17")
         self.label_29 = QLabel(self.page_7)
@@ -740,7 +740,7 @@ class Ui_MainWindow(object):
         self.electric_field_radio = QRadioButton(self.page_9)
         self.electric_field_radio.setObjectName(u"electric_field_radio")
         self.electric_field_radio.setCheckable(True)
-        self.electric_field_radio.setChecked(False)
+        self.electric_field_radio.setChecked(True)
 
         self.gridLayout_18.addWidget(self.electric_field_radio, 2, 0, 1, 1)
 
@@ -769,36 +769,41 @@ class Ui_MainWindow(object):
         self.groupBox_7.setObjectName(u"groupBox_7")
         self.gridLayout_19 = QGridLayout(self.groupBox_7)
         self.gridLayout_19.setObjectName(u"gridLayout_19")
-        self.run_button = QPushButton(self.groupBox_7)
-        self.run_button.setObjectName(u"run_button")
-
-        self.gridLayout_19.addWidget(self.run_button, 0, 0, 1, 1)
-
-        self.label = QLabel(self.groupBox_7)
-        self.label.setObjectName(u"label")
-
-        self.gridLayout_19.addWidget(self.label, 0, 2, 1, 1)
-
-        self.pause_button = QPushButton(self.groupBox_7)
-        self.pause_button.setObjectName(u"pause_button")
-
-        self.gridLayout_19.addWidget(self.pause_button, 0, 1, 1, 1)
-
-        self.frame_rate_line_edit = QLineEdit(self.groupBox_7)
-        self.frame_rate_line_edit.setObjectName(u"frame_rate_line_edit")
-
-        self.gridLayout_19.addWidget(self.frame_rate_line_edit, 0, 3, 1, 1)
-
         self.horizontalSlider = QSlider(self.groupBox_7)
         self.horizontalSlider.setObjectName(u"horizontalSlider")
         self.horizontalSlider.setOrientation(Qt.Horizontal)
 
-        self.gridLayout_19.addWidget(self.horizontalSlider, 0, 4, 1, 1)
+        self.gridLayout_19.addWidget(self.horizontalSlider, 1, 7, 1, 1)
+
+        self.frame_rate_line_edit = QLineEdit(self.groupBox_7)
+        self.frame_rate_line_edit.setObjectName(u"frame_rate_line_edit")
+
+        self.gridLayout_19.addWidget(self.frame_rate_line_edit, 1, 6, 1, 1)
+
+        self.label = QLabel(self.groupBox_7)
+        self.label.setObjectName(u"label")
+
+        self.gridLayout_19.addWidget(self.label, 1, 5, 1, 1)
 
         self.set_frame_rate_button = QPushButton(self.groupBox_7)
         self.set_frame_rate_button.setObjectName(u"set_frame_rate_button")
 
-        self.gridLayout_19.addWidget(self.set_frame_rate_button, 0, 5, 1, 1)
+        self.gridLayout_19.addWidget(self.set_frame_rate_button, 1, 8, 1, 1)
+
+        self.run_button = QPushButton(self.groupBox_7)
+        self.run_button.setObjectName(u"run_button")
+
+        self.gridLayout_19.addWidget(self.run_button, 1, 1, 1, 1)
+
+        self.pause_button = QPushButton(self.groupBox_7)
+        self.pause_button.setObjectName(u"pause_button")
+
+        self.gridLayout_19.addWidget(self.pause_button, 1, 3, 1, 1)
+
+        self.reset_button = QPushButton(self.groupBox_7)
+        self.reset_button.setObjectName(u"reset_button")
+
+        self.gridLayout_19.addWidget(self.reset_button, 1, 0, 1, 1)
 
 
         self.gridLayout.addWidget(self.groupBox_7, 1, 0, 1, 1)
@@ -817,7 +822,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setCurrentIndex(0)
         self.toolBox.setCurrentIndex(0)
         self.toolBox_2.setCurrentIndex(0)
-        self.toolBox_3.setCurrentIndex(0)
+        self.toolBox_3.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -891,9 +896,10 @@ class Ui_MainWindow(object):
         self.clear_list_button.setText(QCoreApplication.translate("MainWindow", u"clear list", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), QCoreApplication.translate("MainWindow", u"electro-magnetic effect of fields on a particle", None))
         self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"simulation controls", None))
-        self.run_button.setText(QCoreApplication.translate("MainWindow", u"run", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"frame rate:", None))
-        self.pause_button.setText(QCoreApplication.translate("MainWindow", u"pause", None))
         self.set_frame_rate_button.setText(QCoreApplication.translate("MainWindow", u"set frame rate", None))
+        self.run_button.setText(QCoreApplication.translate("MainWindow", u"run", None))
+        self.pause_button.setText(QCoreApplication.translate("MainWindow", u"pause", None))
+        self.reset_button.setText(QCoreApplication.translate("MainWindow", u"reset", None))
     # retranslateUi
 

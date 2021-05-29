@@ -1,7 +1,7 @@
 from utils import *
 
 
-class EibpSystem:
+class EibpSystem:  # eibp - electrical interaction between particles
     def __init__(self, particles=None):
         if particles:
             self.particles = particles
@@ -23,8 +23,16 @@ class EibpSystem:
         selected_particle.clear_trail()
         self.particles.remove(selected_particle)
 
+    def make_invisible(self):
+        for particle in self.particles:
+            particle.visible = False
 
-class EmeofoapSystem:
+    def make_visible(self):
+        for particle in self.particles:
+            particle.visible = True
+
+
+class EmeofoapSystem:  # emeofoap - electro-magnetic effect of fields on a particle
     def __init__(self, fields=None, particle=None):
         if fields:
             self.fields = fields
@@ -47,6 +55,20 @@ class EmeofoapSystem:
         selected_force.visible = False
         self.force.remove(selected_force)
 
+    def make_invisible(self):
+        for field in self.fields:
+            field.visible = False
+
+        if self.particle:
+            self.particle.visible = False
+
+    def make_visible(self):
+        for field in self.fields:
+            field.visible = True
+
+        if self.particle:
+            self.particle.visible = True
+
 class Field:
     def __init__(self, value, position, size, direction, field_color):
         self.value = value  # size of the field at distance 1 from the the self.position
@@ -59,7 +81,6 @@ class Field:
 
 
 def update(self, force):
-    print(force)
     self.acceleration = force * (1/self.mass)
     self.velocity += self.acceleration * dt
     if mag(self.velocity) > max_speed:  # make sure speed isn't over the limit
